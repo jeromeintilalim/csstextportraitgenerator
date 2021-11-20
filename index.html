@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Portrait Generator</title>
+
+    <style>
+        body {
+            background-color: #262626;
+            font-family: poppins;
+        }
+        
+        .displayContainer {
+            word-wrap: break-word;
+            text-align: justify;
+        }
+
+        p {
+            text-align: justify;
+            font-family: calibri;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+            background-repeat: no-repeat;
+            background-size: contain;
+            line-height: 10px;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 80%;
+            height: 260px;
+            background-color: pink;
+            margin: 50px auto;
+            border-radius: 10px;
+            border: 5px solid black;
+            padding: 10px;
+            display: flex;
+        }
+
+        textarea {
+            min-height: 200px;
+            max-height: 200px;
+            min-width: 900px;
+            max-width: 900px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .right {
+            margin: 0 0 0 10px;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="left">
+            <h1>Enter Text: </h1>
+            <textarea form="form" id="text" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div class="right">
+            <form id="form" runat="server">
+                <h1>Select Image: </h1>
+                <input id="image" name="image" type="file" accept="image/*" />
+                <br><br><br>
+                <input id="btn" type="button" value="Generate Text Portrait Bullshit" style="font-size: 40px;" />
+            </form>
+        </div>
+    </div>
+
+    <div class="displayContainer">
+        <p id="display"></p>
+    </div>
+
+    <script>
+
+        btn.onclick = evt => {
+            var content = document.querySelector("#text");
+            var display = document.querySelector("#display");
+            display.innerHTML = content.value;
+            const [file] = image.files
+            if (file) {
+                display.style.backgroundImage ="url("+ URL.createObjectURL(file)+")"
+            } else {
+                alert("enter some shit")
+            }
+        }
+    </script>
+</body>
+
+</html>
